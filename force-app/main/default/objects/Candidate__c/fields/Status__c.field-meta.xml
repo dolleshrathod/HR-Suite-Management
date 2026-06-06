@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Application_Status__c</fullName>
-    <label>Application Status</label>
+    <fullName>Status__c</fullName>
+    <label>Current Status</label>
     <type>Picklist</type>
+    <required>true</required>
     <trackHistory>true</trackHistory>
     <valueSet>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>New</fullName>
+                <fullName>Applied</fullName>
                 <default>true</default>
-                <label>New</label>
+                <label>Applied</label>
             </value>
             <value>
                 <fullName>Screening</fullName>
@@ -19,14 +20,14 @@
                 <label>Screening</label>
             </value>
             <value>
-                <fullName>Interview</fullName>
+                <fullName>Interview Scheduled</fullName>
                 <default>false</default>
-                <label>Interview</label>
+                <label>Interview Scheduled</label>
             </value>
             <value>
-                <fullName>Offer</fullName>
+                <fullName>Offer Extended</fullName>
                 <default>false</default>
-                <label>Offer</label>
+                <label>Offer Extended</label>
             </value>
             <value>
                 <fullName>Hired</fullName>
@@ -37,6 +38,11 @@
                 <fullName>Rejected</fullName>
                 <default>false</default>
                 <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+                <label>Withdrawn</label>
             </value>
         </valueSetDefinition>
     </valueSet>

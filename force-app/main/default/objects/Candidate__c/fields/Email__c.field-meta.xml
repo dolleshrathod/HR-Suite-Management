@@ -3,6 +3,7 @@
     <fullName>Email__c</fullName>
     <label>Email</label>
     <type>Email</type>
-    <unique>false</unique>
+    <unique>true</unique>
+    <required>true</required>
     <trackHistory>true</trackHistory>
 </CustomField>
