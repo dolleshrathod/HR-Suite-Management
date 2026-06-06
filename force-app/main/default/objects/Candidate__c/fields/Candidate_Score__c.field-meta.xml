@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Candidate_Score__c</fullName>
+    <label>Candidate Score</label>
+    <type>Number</type>
+    <formula>Experience__c * 2</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <precision>18</precision>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+</CustomField>

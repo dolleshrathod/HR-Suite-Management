@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Senior__c</fullName>
+    <label>Is Senior Profile</label>
+    <type>Checkbox</type>
+    <formula>Experience__c &gt;= 5</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <trackHistory>false</trackHistory>
+</CustomField>

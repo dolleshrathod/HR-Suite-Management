@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Source__c</fullName>
+    <label>Sub Source</label>
+    <type>Picklist</type>
+    <trackHistory>false</trackHistory>
+    <valueSet>
+        <controllingField>Source__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+                <label>Employee Referral</label>
+            </value>
+            <value>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+                <label>Partner Referral</label>
+            </value>
+            <value>
+                <fullName>Agency Referral</fullName>
+                <default>false</default>
+                <label>Agency Referral</label>
+            </value>
+            <value>
+                <fullName>LinkedIn InMail</fullName>
+                <default>false</default>
+                <label>LinkedIn InMail</label>
+            </value>
+            <value>
+                <fullName>LinkedIn Apply</fullName>
+                <default>false</default>
+                <label>LinkedIn Apply</label>
+            </value>
+            <value>
+                <fullName>LinkedIn Ad</fullName>
+                <default>false</default>
+                <label>LinkedIn Ad</label>
+            </value>
+            <value>
+                <fullName>Career Page</fullName>
+                <default>false</default>
+                <label>Career Page</label>
+            </value>
+            <value>
+                <fullName>Contact Form</fullName>
+                <default>false</default>
+                <label>Contact Form</label>
+            </value>
+            <value>
+                <fullName>Naukri</fullName>
+                <default>false</default>
+                <label>Naukri</label>
+            </value>
+            <value>
+                <fullName>Indeed</fullName>
+                <default>false</default>
+                <label>Indeed</label>
+            </value>
+            <value>
+                <fullName>Monster</fullName>
+                <default>false</default>
+                <label>Monster</label>
+            </value>
+            <value>
+                <fullName>Shine</fullName>
+                <default>false</default>
+                <label>Shine</label>
+            </value>
+            <value>
+                <fullName>Job Fair</fullName>
+                <default>false</default>
+                <label>Job Fair</label>
+            </value>
+            <value>
+                <fullName>Office Walk-In</fullName>
+                <default>false</default>
+                <label>Office Walk-In</label>
+            </value>
+            <value>
+                <fullName>College Campus</fullName>
+                <default>false</default>
+                <label>College Campus</label>
+            </value>
+            <value>
+                <fullName>Internship Conversion</fullName>
+                <default>false</default>
+                <label>Internship Conversion</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Employee Referral</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Partner Referral</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Agency Referral</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LinkedIn</controllingFieldValue>
+            <valueName>LinkedIn InMail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LinkedIn</controllingFieldValue>
+            <valueName>LinkedIn Apply</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LinkedIn</controllingFieldValue>
+            <valueName>LinkedIn Ad</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Website</controllingFieldValue>
+            <valueName>Career Page</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Website</controllingFieldValue>
+            <valueName>Contact Form</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Job Portal</controllingFieldValue>
+            <valueName>Naukri</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Job Portal</controllingFieldValue>
+            <valueName>Indeed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Job Portal</controllingFieldValue>
+            <valueName>Monster</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Job Portal</controllingFieldValue>
+            <valueName>Shine</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Walk-In</controllingFieldValue>
+            <valueName>Job Fair</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Walk-In</controllingFieldValue>
+            <valueName>Office Walk-In</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campus Drive</controllingFieldValue>
+            <valueName>College Campus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campus Drive</controllingFieldValue>
+            <valueName>Internship Conversion</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Experienced</fullName>
+    <active>true</active>
+    <label>Experienced</label>
+    <description>Candidates with 2 or more years of experience. Full field visibility including Current CTC.</description>
+</RecordType>
