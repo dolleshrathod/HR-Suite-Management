@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Openings__c</fullName>
+    <label>Number of Openings</label>
+    <type>Number</type>
+    <precision>3</precision>
+    <scale>0</scale>
+    <required>true</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+    <description>The total number of headcount slots approved for this job position. Min: 1</description>
+    <defaultValue></defaultValue>
+</CustomField>

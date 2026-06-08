@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Min_Experience__c</fullName>
+    <label>Min Experience (Yrs)</label>
+    <type>Number</type>
+    <precision>2</precision>
+    <scale>0</scale>
+    <required>false</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+    <description>The minimum number of years of relevant professional experience required for this job position.</description>
+    <defaultValue></defaultValue>
+</CustomField>

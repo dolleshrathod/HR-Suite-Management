@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Job Position</label>
+    <pluralLabel>Job Positions</pluralLabel>
+    <nameField>
+        <label>Position Title</label>
+        <type>Text</type>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+    <description>Stores job position records for open, on-hold, and closed requisitions managed by the HR Suite.</description>
+</CustomObject>
