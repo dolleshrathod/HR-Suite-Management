@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hiring_Manager__c</fullName>
+    <label>Hiring Manager</label>
+    <type>Lookup</type>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Job_Positions</relationshipName>
+    <required>false</required>
+    <description>The Salesforce User responsible for reviewing and approving candidates for this job position. Required enforcement is handled via Validation Rule to allow safe User deactivation (Salesforce does not permit Restrict delete constraint on User lookups).</description>
+    <deleteConstraint>SetNull</deleteConstraint>
+</CustomField>
