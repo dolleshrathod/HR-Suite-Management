@@ -1,0 +1,14 @@
+<template>
+    <div class="list-wrapper">
+        <h3 class="list-title">Opportunity Records</h3>
+        <lightning-datatable
+            key-field="opportunityId"
+            data={records}
+            columns={columns}
+            hide-checkbox-column
+            sorted-by={sortedBy}
+            sorted-direction={sortedDirection}
+            onsort={handleSort}>
+        </lightning-datatable>
+    </div>
+</template>

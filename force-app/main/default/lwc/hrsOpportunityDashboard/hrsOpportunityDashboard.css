@@ -1,0 +1,28 @@
+.kpi-strip {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.kpi-card {
+    flex: 1;
+    background: linear-gradient(135deg, #0070d2 0%, #1b96ff 100%);
+    color: #fff;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+}
+
+.kpi-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.kpi-label {
+    font-size: 0.75rem;
+    opacity: 0.85;
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
