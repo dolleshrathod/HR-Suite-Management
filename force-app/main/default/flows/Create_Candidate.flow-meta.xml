@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <description>Screen Flow that collects Candidate details across two screens and creates a Candidate__c record.</description>
+    <interviewLabel>Create Candidate {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Candidate</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <status>Active</status>
+
+    <!-- ─── SObject Variable ──────────────────────────────────────────────── -->
+
+    <variables>
+        <name>varCandidate</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Candidate__c</objectType>
+    </variables>
+
+    <!-- ─── Default Status = Applied ─────────────────────────────────────── -->
+
+    <assignments>
+        <name>Assign_Defaults</name>
+        <label>Set Default Status</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <assignmentItems>
+            <assignToReference>varCandidate.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Applied</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Screen_PersonalDetails</targetReference>
+        </connector>
+    </assignments>
+
+    <!-- ─── Screen 1 : Personal Details ──────────────────────────────────── -->
+    <!--
+        InputField + objectFieldReference binds the screen widget bidirectionally
+        to the SObject variable field.  dataType is required by the schema.
+        No outputParameters or storeOutputAutomatically needed.
+    -->
+
+    <screens>
+        <name>Screen_PersonalDetails</name>
+        <label>Personal Details</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>sfc_Name</name>
+            <dataType>String</dataType>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <objectFieldReference>varCandidate.Name</objectFieldReference>
+        </fields>
+        <fields>
+            <name>sfc_Email</name>
+            <dataType>String</dataType>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <objectFieldReference>varCandidate.Email__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>sfc_Phone</name>
+            <dataType>String</dataType>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <objectFieldReference>varCandidate.Phone__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>sfc_LinkedIn</name>
+            <dataType>String</dataType>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <objectFieldReference>varCandidate.LinkedIn_URL__c</objectFieldReference>
+        </fields>
+        <connector>
+            <targetReference>Screen_EmploymentDetails</targetReference>
+        </connector>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+
+    <!-- ─── Screen 2 : Employment Details ────────────────────────────────── -->
+
+    <screens>
+        <name>Screen_EmploymentDetails</name>
+        <label>Employment Details</label>
+        <locationX>176</locationX>
+        <locationY>398</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>sfc_CurrentEmployer</name>
+            <dataType>String</dataType>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <objectFieldReference>varCandidate.Current_Employer__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>sfc_Experience</name>
+            <dataType>Number</dataType>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <objectFieldReference>varCandidate.Experience__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>sfc_CurrentCTC</name>
+            <dataType>Currency</dataType>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <objectFieldReference>varCandidate.Current_CTC__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>sfc_ExpectedCTC</name>
+            <dataType>Currency</dataType>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <objectFieldReference>varCandidate.Expected_CTC__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>sfc_NoticePeriod</name>
+            <dataType>Number</dataType>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <objectFieldReference>varCandidate.Notice_Period__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>sfc_Source</name>
+            <dataType>String</dataType>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <objectFieldReference>varCandidate.Source__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>sfc_SubSource</name>
+            <dataType>String</dataType>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <objectFieldReference>varCandidate.Sub_Source__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>sfc_Status</name>
+            <dataType>String</dataType>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <objectFieldReference>varCandidate.Status__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>sfc_ResumeURL</name>
+            <dataType>String</dataType>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <objectFieldReference>varCandidate.Resume_URL__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>sfc_Notes</name>
+            <dataType>String</dataType>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <objectFieldReference>varCandidate.Notes__c</objectFieldReference>
+        </fields>
+        <connector>
+            <targetReference>Create_Candidate_Record</targetReference>
+        </connector>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+
+    <!-- ─── Record Create ─────────────────────────────────────────────────── -->
+
+    <recordCreates>
+        <name>Create_Candidate_Record</name>
+        <label>Create Candidate Record</label>
+        <locationX>176</locationX>
+        <locationY>518</locationY>
+        <inputReference>varCandidate</inputReference>
+    </recordCreates>
+
+    <!-- ─── Start ─────────────────────────────────────────────────────────── -->
+
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Assign_Defaults</targetReference>
+        </connector>
+    </start>
+</Flow>
