@@ -1,0 +1,11 @@
+<template>
+    <div class="chart-wrapper">
+        <h3 class="chart-title">Opportunities by Stage</h3>
+        <div class="chart-container">
+            <canvas class="chart-canvas"></canvas>
+        </div>
+        <template if:true={isLoading}>
+            <div class="chart-loading">Loading chart...</div>
+        </template>
+    </div>
+</template>

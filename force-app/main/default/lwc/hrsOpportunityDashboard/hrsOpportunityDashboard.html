@@ -1,0 +1,102 @@
+<template>
+    <lightning-card title="Opportunity Pipeline" icon-name="standard:opportunity">
+
+        <!-- Error State -->
+        <template if:true={hasError}>
+            <div class="slds-notify slds-notify_alert slds-alert_error slds-m-around_medium" role="alert">
+                <span class="slds-assistive-text">Error</span>
+                <lightning-icon
+                    icon-name="utility:error"
+                    alternative-text="Error"
+                    size="small"
+                    class="slds-m-right_x-small">
+                </lightning-icon>
+                <p>
+                    <strong>Error loading opportunities:</strong>&nbsp;
+                    <lightning-formatted-text value={errorMessage}></lightning-formatted-text>
+                </p>
+            </div>
+        </template>
+
+        <!-- Loading Spinner -->
+        <template if:true={isLoading}>
+            <div class="slds-p-around_large slds-align_absolute-center">
+                <lightning-spinner alternative-text="Loading opportunities..." size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Main Content -->
+        <template if:true={isReady}>
+            <div class="slds-p-around_medium">
+
+                <!-- KPI Strip -->
+                <div class="kpi-strip">
+                    <div class="kpi-card">
+                        <div class="kpi-value">{totalCount}</div>
+                        <div class="kpi-label">Total Opportunities</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">
+                            <lightning-formatted-number
+                                value={totalAmount}
+                                format-style="currency"
+                                currency-code="USD"
+                                maximum-fraction-digits="0">
+                            </lightning-formatted-number>
+                        </div>
+                        <div class="kpi-label">Pipeline Value</div>
+                    </div>
+                </div>
+
+                <!-- Stage Filter -->
+                <div class="slds-m-bottom_medium">
+                    <lightning-combobox
+                        name="stageFilter"
+                        label="Filter by Stage"
+                        value={selectedStage}
+                        options={stageOptions}
+                        onchange={handleStageChange}>
+                    </lightning-combobox>
+                </div>
+
+                <!-- 2-column grid: chart left, list right -->
+                <div class="slds-grid slds-wrap slds-gutters">
+
+                    <!-- Chart Column -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-m-bottom_medium">
+                        <c-hrs-opportunity-chart
+                            chart-data={chartData}
+                            active-stage={selectedStage}
+                            onstageselect={handleChartStageSelect}>
+                        </c-hrs-opportunity-chart>
+                    </div>
+
+                    <!-- List Column -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-m-bottom_medium">
+                        <!-- Empty State -->
+                        <template if:true={isEmpty}>
+                            <div class="slds-illustration slds-illustration_small slds-p-around_medium">
+                                <div class="slds-text-longform slds-align_absolute-center">
+                                    <p class="slds-text-heading_medium">No Opportunities Found</p>
+                                    <p class="slds-text-body_regular slds-m-top_x-small">
+                                        There are no opportunities matching the selected stage.
+                                        Try selecting a different stage or choose &ldquo;All Stages&rdquo;.
+                                    </p>
+                                </div>
+                            </div>
+                        </template>
+
+                        <!-- Data Table -->
+                        <template if:false={isEmpty}>
+                            <c-hrs-opportunity-list
+                                records={filteredOpportunities}>
+                            </c-hrs-opportunity-list>
+                        </template>
+                    </div>
+
+                </div>
+            </div>
+        </template>
+
+    </lightning-card>
+</template>
